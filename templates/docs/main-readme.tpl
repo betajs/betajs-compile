@@ -16,6 +16,9 @@
 | Homepage   | [<%= framework.homepage %>](<%= framework.homepage %>) |
 | Git        | [<%= framework.repository.url %>](<%= framework.repository.url %>) |
 | Repository | [<%= framework.repository.url.replace("git://", "http://").replace(".git", "") %>](<%= framework.repository.url.replace("git://", "http://").replace(".git", "") %>) |
+<% if (framework.meta.blog) { %>| Blog       | [<%= framework.meta.blog %>](<%= framework.meta.blog %>) |<% } %> 
+<% if (framework.meta.twitter) { %>| Twitter    | [<%= framework.meta.twitter %>](<%= framework.meta.twitter %>) |<% } %> 
+
 
 <% if (framework.meta.compatability) { %>
 <%= indent %>## Compatability (Tested)
