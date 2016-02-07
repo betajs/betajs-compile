@@ -50,7 +50,8 @@ module.exports = {
     "lint",
     "uglify",
     "concat",
-    "flowcheck"
+    "flowcheck",
+    "flash"
     
 ].forEach(function (task) {
 	module.exports[task + "Task"] = require(__dirname + "/grunt/" + task + ".js");
