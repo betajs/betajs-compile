@@ -5,7 +5,7 @@ module.exports = function (taskname, source, target, options) {
 	taskname = taskname || "closure";
 	if (typeof source === "string")
 		source = [source];
-	target = target || (source[0] + ".closure.js");
+	target = target || (source[source.length - 1] + ".closure.js");
 	var externs = [this.localFile("js/fragments/closure.js-fragment")];
 	if (options.jquery)
 		externs.push(this.localFile("vendors/jquery-1.9.closure-extern.js"));
