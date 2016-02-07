@@ -1,8 +1,14 @@
-module.exports = function (taskname, source, target, keeptarget) {
+module.exports = function (taskname, source, target, options) {
 	this.grunt.loadNpmTasks('grunt-closure-tools');
 	this.grunt.loadNpmTasks('grunt-contrib-clean');
+	options = options || {};
 	taskname = taskname || "closure";
-	target = target || source + ".closure.js"
+	if (typeof source === "string")
+		source = [source];
+	target = target || (source[0] + ".closure.js");
+	var externs = [this.localFile("js/fragments/closure.js-fragment")];
+	if (options.jquery)
+		externs.push(this.localFile("vendors/jquery-1.9.closure-extern.js"));
 	return this.registerTask(taskname, [
 		this.addConfigTask("closureCompiler", taskname, {
 			options : {
@@ -10,12 +16,12 @@ module.exports = function (taskname, source, target, keeptarget) {
 				compilerOpts : {
 					compilation_level : 'ADVANCED_OPTIMIZATIONS',
 					warning_level : 'verbose',
-					externs : [this.localFile("js/fragments/closure.js-fragment")]
+					externs : externs
 				}
 			},
 			src : source,
 			dest : target
 		}),
-		keeptarget ? null : this.addConfigTask("clean", taskname, target)
+		options.keeptarget ? null : this.addConfigTask("clean", taskname, target)
 	]);
 };

@@ -46,6 +46,7 @@ module.exports = {
     "docs",
     "browserstack",
     "qunit",
+    "browserqunit",
     "lint",
     "uglify",
     "concat"
