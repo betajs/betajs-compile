@@ -48,10 +48,17 @@ module.exports = {
     "qunit",
     "browserqunit",
     "lint",
+    "csslinter",
     "uglify",
+    "cssmin",
     "concat",
     "flowcheck",
-    "flash"
+    "flash",
+    "concatsass",
+    "betajstemplates",
+    "clean",
+    "simplecopy",
+    "yamltojs"
     
 ].forEach(function (task) {
 	module.exports[task + "Task"] = require(__dirname + "/grunt/" + task + ".js");
