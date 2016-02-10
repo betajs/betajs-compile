@@ -1,15 +1,30 @@
 {
 	"name": "betajs-compile",
-	"version": "0.0.8",
+	"version": "0.0.9",
 	"description": "BetaJS-Compile is a helper repository for building betajs modules.",
 	"homepage": "http://betajs.com",
 	"contributors": ["Oliver Friedmann"],
 	"license": "Apache 2.0",
 	"devDependencies": {
-		"grunt": ""
+		"grunt": "",
+		"grunt-contrib-jshint": "",
+		"grunt-template": ""
 	},
 	"repository": {
 		"type": "git",
 		"url": "git://github.com/betajs/betajs-compile.git"
+	}, 
+	"meta": {
+		"blog": "http://blog.betajs.com",
+		"twitter": "http://twitter.com/thebetajs",
+		"badges": {
+			"codeclimate": true,
+			"travis": false,
+			"npm": false
+		},
+		"status": "Active, Production ready",
+		"compatability": {
+			"NodeJS": "0.10 - Latest" 
+		}
 	} 
 }

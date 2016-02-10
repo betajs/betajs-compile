@@ -8,8 +8,8 @@ engines:
   fixme:
     enabled: true
 ratings:
-  paths:<% sources.forEach(function (source) { %>
-  - <%= source %><% }) %>
+  paths:
+  - grunt/*.js
 exclude_paths:
 - dist/**/*
 - dist/*

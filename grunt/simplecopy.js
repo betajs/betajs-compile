@@ -2,11 +2,10 @@ module.exports = function (taskname, files) {
 	this.grunt.loadNpmTasks('grunt-contrib-copy');
 	taskname = taskname || "simplecopy";
 	var mapped = [];
-	for (var target in files) {
+	var process = function (target, source) {
 		var targetPath = target.split("/");
 		targetPath.pop();
 		targetPath = targetPath.join("/");
-		var source = files[target];
 		var sourcePath = source.split("/");
 		var sourceFile = sourcePath.pop();
 		sourcePath = sourcePath.join("/");
@@ -19,7 +18,9 @@ module.exports = function (taskname, files) {
 				return target;
 			}
 		});
-	}
+	};
+	for (var target in files)
+		process(target, files[target]);
 	return this.registerTask(taskname, [
 		this.addConfigTask("copy", taskname, {
 			files: mapped
