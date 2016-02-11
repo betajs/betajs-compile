@@ -1,12 +1,14 @@
-module.exports = function (taskname) {
+module.exports = function (taskname, options) {
 	this.grunt.loadNpmTasks('grunt-template');
 	taskname = taskname || "readme";
+	options = options || {}
 	return this.registerTask(taskname, [
         this.addConfigTask("template", taskname, {
 			options : {
 				data: {
 					indent: "",
-					framework: this.pkg
+					framework: this.pkg,
+					installdoc: options.installdoc ? this.grunt.file.read(options.installdoc) : null
 				}
 			},
 			files : {
