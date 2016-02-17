@@ -1,4 +1,4 @@
-module.exports = function (taskname, src, dest, targetplayer) {
+module.exports = function (taskname, src, dest, targetplayer, targetswf) {
 	this.grunt.loadNpmTasks('grunt-shell');
 	taskname = taskname || "flash";
 	targetplayer = targetplayer || "11.2";
@@ -14,7 +14,7 @@ module.exports = function (taskname, src, dest, targetplayer) {
 	    	command: [
                 'mxmlc',
                 filename,
-                '-target-player=' + targetplayer,                
+                (targetswf ? '-swf-version=' + targetswf + ' ' : '') + '-target-player=' + targetplayer,                
                 '-static-link-runtime-shared-libraries',
                 '-output',
                 pathDown + '/' + dest

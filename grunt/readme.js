@@ -1,7 +1,7 @@
 module.exports = function (taskname, options) {
 	this.grunt.loadNpmTasks('grunt-template');
 	taskname = taskname || "readme";
-	options = options || {}
+	options = options || {};
 	return this.registerTask(taskname, [
         this.addConfigTask("template", taskname, {
 			options : {

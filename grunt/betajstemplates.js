@@ -1,4 +1,4 @@
-module.exports = function (taskname, source, target, namespace) {
+module.exports = function (taskname, source, target, namespace, noscoped) {
 	this.grunt.loadNpmTasks('grunt-betajs-templates');
 	taskname = taskname || "betajstemplates";
 	var files = {};
@@ -7,7 +7,7 @@ module.exports = function (taskname, source, target, namespace) {
         this.addConfigTask("betajs_templates", taskname, {
 			options : {
 				namespace: namespace,
-				scoped: true
+				scoped: !noscoped
 			},
 			files: files
 		})

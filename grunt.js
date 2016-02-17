@@ -58,7 +58,10 @@ module.exports = {
     "betajstemplates",
     "clean",
     "simplecopy",
-    "yamltojs"
+    "multicopy",
+    "yamltojs",
+    "replacer",
+    "scopedclosurerevision"
     
 ].forEach(function (task) {
 	module.exports[task + "Task"] = require(__dirname + "/grunt/" + task + ".js");

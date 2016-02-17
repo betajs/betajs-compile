@@ -1,12 +1,16 @@
-# betajs-compile 0.0.9
+# betajs-compile 0.0.12
 [![Code Climate](https://codeclimate.com/github/betajs/betajs-compile/badges/gpa.svg)](https://codeclimate.com/github/betajs/betajs-compile)
 
 
 BetaJS-Compile is a helper repository for building betajs modules.
 
-
 ## Status
 Active, Production ready
+
+
+
+
+
 
 
 ## Links
