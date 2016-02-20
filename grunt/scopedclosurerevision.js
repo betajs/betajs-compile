@@ -21,7 +21,8 @@ module.exports = function (taskname, source, target, bindings, version_assumptio
 			},
 			exports: exports ? "module:" : false,
 			src : source,
-			dest : target
+			dest : target,
+			banner : this.banner
 		})
 	]);
 };

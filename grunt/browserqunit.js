@@ -9,7 +9,7 @@ module.exports = function (taskname, test, httpserver) {
 					  base: '.',
 					  keepalive: true,
 					  open: {
-						   target: 'http://localhost:8711/' + test
+						   target: 'http://' + this.myip() + ':8711/' + test
 					  }
 				}
 			})

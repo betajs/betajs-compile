@@ -47,13 +47,18 @@ module.exports = function (taskname, options) {
 							"footer": "",
 							"copyright": "BetaJS (c) - Apache License",
 							"navType": "vertical",
-							"theme": "cerulean",
+							"theme": "paper",
 							"linenums": true,
 							"collapseSymbols": false,
 							"inverseNav": true,
 							"highlightTutorialCode": true,
 							"protocol": "fred://",
-							"singleTutorials": true
+							"singleTutorials": true,
+							"singleModules": true,
+							"analytics": {
+								"ua": "UA-43747442-1",
+								"domain": "betajs.com"
+							}
 						},
 						"markdown": {
 							"parser": "gfm",

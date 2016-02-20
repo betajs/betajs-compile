@@ -30,6 +30,14 @@ module.exports = {
 			return !!s;
 		}));
 		return this;
+	},
+	
+	myip: function () {
+		try {
+			return (require('child_process', {encoding: "string"}).execSync("ifconfig | grep 'inet '  | grep broadcast | sed 's/.*inet \\(.*\\) netmask.*/\\1/'") + "").trim();
+		} catch (e) {
+			return "127.0.0.1";
+		}
 	}
 	
 };

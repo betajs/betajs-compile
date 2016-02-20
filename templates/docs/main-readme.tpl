@@ -27,7 +27,7 @@
 
 
 <% if (framework.meta.compatability) { %>
-<%= indent %>## Compatability (Tested)
+<%= indent %>## Compatability
 | Target | Versions |
 | :----- | -------: |
 <% for (var key in framework.meta.compatability) { %>| <%= key %> | <%= framework.meta.compatability[key] %> |

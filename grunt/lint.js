@@ -1,5 +1,7 @@
-module.exports = function (taskname, code) {
+module.exports = function (taskname, code, eslint) {
 	this.grunt.loadNpmTasks('grunt-contrib-jshint');
+	if (eslint)
+		this.grunt.loadNpmTasks('grunt-eslint');
 	taskname = taskname || "lint";
 	return this.registerTask(taskname, [
 		this.addConfigTask("jshint", taskname, {
@@ -11,6 +13,13 @@ module.exports = function (taskname, code) {
 			files: {
 				src: code
 			}
-		})
+		}),
+		eslint ? this.addConfigTask("eslint", taskname, {
+			options : {
+			},
+			files: {
+				src: code
+			}
+		}) : null
 	]);
 };
