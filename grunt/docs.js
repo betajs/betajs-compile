@@ -45,7 +45,7 @@ module.exports = function (taskname, options) {
 							"outputSourcePath": true,
 							"systemName": this.pkg.name,
 							"footer": "",
-							"copyright": "BetaJS (c) - Apache License",
+							"copyright": "BetaJS (c) - Apache 2.0 License",
 							"navType": "vertical",
 							"theme": "paper",
 							"linenums": true,
@@ -65,6 +65,7 @@ module.exports = function (taskname, options) {
 							"hardwrap": true
 						},
 						"pages": {
+							/*
 							"builds": {
 								"title": "Builds",
 								"navbar": true,
@@ -76,7 +77,7 @@ module.exports = function (taskname, options) {
 								"navbar": true,
 								"first": false,
 								"source": "./TEMP-ABOUT.md"
-							},
+							},*/
 							"blog": {
 								"title": "Blog",
 								"url": this.pkg.meta.blog,

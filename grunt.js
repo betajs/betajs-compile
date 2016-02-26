@@ -26,7 +26,7 @@ module.exports = {
 	},
 	
 	registerTask: function (taskname, tasks) {
-		this.grunt.registerTask(taskname, tasks.filter(function (s) {
+		this.grunt.registerTask(taskname, typeof tasks !== "object" ? tasks : tasks.filter(function (s) {
 			return !!s;
 		}));
 		return this;
@@ -69,7 +69,8 @@ module.exports = {
     "multicopy",
     "yamltojs",
     "replacer",
-    "scopedclosurerevision"
+    "scopedclosurerevision",
+    "package"
     
 ].forEach(function (task) {
 	module.exports[task + "Task"] = require(__dirname + "/grunt/" + task + ".js");

@@ -10,14 +10,5 @@ engines:
 ratings:
   paths:<% sources.forEach(function (source) { %>
   - <%= source %><% }) %>
-exclude_paths:
-- dist/**/*
-- dist/*
-- compile/**/*
-- vendors/**/*
-- vendors/*
-- docsrc/**/*
-- demos/**/*
-- tests/**/*
-- tasks/**/*
-- docs/**/*
+exclude_paths:<% excluded.forEach(function (ex) { %>
+- <%= ex %><% }) %>

@@ -5,15 +5,19 @@
 
 <%= framework.description %>
 
-<%= indent %>## Status
-<%= framework.meta.status %>
-
 
 <% if (installdoc) { %>
 ## Getting Started
 <% } %>
 
 <%= installdoc %>
+
+
+<% if (summarydoc) { %>
+## Basic Usage
+<% } %>
+
+<%= summarydoc %>
 
 
 <%= indent %>## Links

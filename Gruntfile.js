@@ -12,11 +12,14 @@ module.exports = function(grunt) {
     /* External Configurations */
     .codeclimateTask(null, ['grunt/*.js'])
     
+    /* Package */
+    .packageTask()
+    
     /* Markdown Files */
 	.readmeTask()
     .licenseTask();
 
 	grunt.initConfig(gruntHelper.config);	
 
-	grunt.registerTask('default', ['lint', 'readme', 'license', 'codeclimate']);
+	grunt.registerTask('default', ['package', 'lint', 'readme', 'license', 'codeclimate']);
 };
