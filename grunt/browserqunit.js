@@ -6,6 +6,7 @@ module.exports = function (taskname, test, httpserver) {
 			this.addConfigTask("connect", taskname, {
 				options: {
 					  port: 8711,
+					  hostname: this.myip(),
 					  base: '.',
 					  keepalive: true,
 					  open: {
