@@ -57,6 +57,7 @@ var browserstack = function (compatability, desktop, mobile) {
 			var minver = mapped.browserstack_versions ? mapped.browserstack_versions[minversion] || minversion : minversion;
 			var maxver = mapped.browserstack_versions ? mapped.browserstack_versions[maxversion] || maxversion : maxversion;
 			var expand = mapped.browserstack_expand || (minver === maxver ? [minver] : [minver, maxver]);
+			expand = expand.slice();
 			while (expand.length > 0) {
 				if (expand[0] === minver)
 					break;

@@ -15,16 +15,17 @@
         "url": "https://github.com/betajs/betajs-compile/issues"
     },
     "name": "betajs-compile",
-    "version": "0.0.15",
+    "version": "0.0.16",
     "description": "BetaJS-Compile is a helper repository for building betajs modules.",
     "contributors": [
         "Oliver Friedmann"
     ],
     "devDependencies": {
-    	"lodash": "",
+        "lodash": "",
         "grunt": "",
         "grunt-contrib-jshint": "",
-        "grunt-template": ""
+        "grunt-template": "",
+        "grunt-yaml": ""
     },
     "repository": {
         "type": "git",
