@@ -7,7 +7,8 @@ module.exports = function (taskname, code) {
 				"import" : 2,
 				"box-sizing": false,
 				"bulletproof-font-face": false,
-				"floats": false
+				"floats": false,
+				"font-sizes": false
 			},
 			src: code
 		})
