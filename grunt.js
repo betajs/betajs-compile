@@ -70,7 +70,8 @@ module.exports = {
     "yamltojs",
     "replacer",
     "scopedclosurerevision",
-    "package"
+    "package",
+    "benchmark"
     
 ].forEach(function (task) {
 	module.exports[task + "Task"] = require(__dirname + "/grunt/" + task + ".js");
