@@ -34,7 +34,8 @@ module.exports = {
 	
 	myip: function () {
 		try {
-			return (require('child_process', {encoding: "string"}).execSync("ifconfig | grep 'inet '  | grep broadcast | sed 's/.*inet \\(.*\\) netmask.*/\\1/'") + "").trim();
+			var s = (require('child_process', {encoding: "string"}).execSync("ifconfig | grep 'inet '  | grep broadcast | sed 's/.*inet \\(.*\\) netmask.*/\\1/'") + "").trim();
+			return s || "127.0.0.1";
 		} catch (e) {
 			return "127.0.0.1";
 		}
