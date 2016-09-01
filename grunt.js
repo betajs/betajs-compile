@@ -1,3 +1,11 @@
+var cmd = function (command, deflt) {
+	try {
+		return (require('child_process', {encoding: "string"}).execSync(command) + "").trim() || deflt;
+	} catch (e) {
+		return deflt;
+	}
+};
+
 module.exports = { 
 	
 	config: {},
@@ -33,12 +41,11 @@ module.exports = {
 	},
 	
 	myip: function () {
-		try {
-			var s = (require('child_process', {encoding: "string"}).execSync("ifconfig | grep 'inet '  | grep broadcast | sed 's/.*inet \\(.*\\) netmask.*/\\1/'") + "").trim();
-			return s || "127.0.0.1";
-		} catch (e) {
-			return "127.0.0.1";
-		}
+		return cmd("ifconfig | grep 'inet '  | grep broadcast | sed 's/.*inet \\(.*\\) netmask.*/\\1/'", "127.0.0.1");
+	},
+	
+	myhostname: function () {
+		return cmd("hostname", "localhost").toLowerCase();
 	}
 	
 };

@@ -1,4 +1,4 @@
-# betajs-compile 0.0.18
+# betajs-compile 0.0.19
 [![Code Climate](https://codeclimate.com/github/betajs/betajs-compile/badges/gpa.svg)](https://codeclimate.com/github/betajs/betajs-compile)
 
 

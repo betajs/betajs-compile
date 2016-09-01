@@ -1,6 +1,6 @@
 {
 	"name": "betajs-compile",
-	"version": "0.0.18",
+	"version": "0.0.19",
 	"description": "BetaJS-Compile is a helper repository for building betajs modules.",
 	"contributors": ["Oliver Friedmann"],
 	"devDependencies": {
@@ -8,7 +8,8 @@
 		"grunt": "",
 		"grunt-contrib-jshint": "",
 		"grunt-template": "",
-		"grunt-yaml": ""
+		"grunt-yaml": "",
+		"js-yaml": ""
 	},
 	"repository": {
 		"type": "git",
