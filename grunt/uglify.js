@@ -1,4 +1,4 @@
-module.exports = function (taskname, source, target) {
+module.exports = function (taskname, source, target, reserved) {
 	this.grunt.loadNpmTasks('grunt-contrib-uglify');
 	taskname = taskname || "uglify";
 	var files = {};
@@ -6,10 +6,13 @@ module.exports = function (taskname, source, target) {
 	return this.registerTask(taskname, [
         this.addConfigTask("uglify", taskname, {
 			options : {
-				banner : this.banner
+				banner : this.banner,
+				mangle: {
+					except: reserved || []
+				}
 			},
 			dest: target,
-			src: source
+			src: source			
 		})
 	]);
 };
