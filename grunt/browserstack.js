@@ -8,7 +8,7 @@ var compatabilityMap = {
 	},
 	"edge": {
 		browserstack_versions: {
-			"latest": "12"
+			"12": "13"
 		}
 	},
 	"opera": {
@@ -19,13 +19,13 @@ var compatabilityMap = {
 	"ios": {
 		mobile: true,
 		browserstack_versions: {
-			"latest": "9.1"
+			"latest": "9.3"
 		}
 	},
 	"android": {
 		mobile: true,
 		browserstack_versions: {
-			"latest": "4.4"
+			"latest": "4.2"
 		}
 	},
 	"nodejs": {
