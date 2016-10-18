@@ -8,8 +8,13 @@ module.exports = function (taskname, source, target, reserved) {
 			options : {
 				banner : this.banner,
 				mangle: {
+					screwIE8: false,
+					supportIE8: true,
 					except: reserved || []
-				}
+				},
+				ASCIIOnly: true,
+				screwIE8: false,
+				supportIE8: true
 			},
 			dest: target,
 			src: source			
