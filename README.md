@@ -36,13 +36,17 @@ BetaJS-Compile is a helper repository for building betajs modules.
 
 
 
-## Contributors
+## Main Contributors
 
 - Oliver Friedmann
-
 
 ## License
 
 Apache-2.0
+
+
+
+
+
 
 

@@ -61,10 +61,9 @@
 <% for (var key in framework.meta.weakDependencies) { %>| <%= key %> | [Open](<%= framework.meta.weakDependencies[key] %>) |
 <% } %><% } %>
 
-<%= indent %>## Contributors
+<%= indent %>## Main Contributors
 <% framework.contributors.forEach(function (contributor) { %>
 - <%= contributor %><% }) %>
-
 
 <%= indent %>## License
 
@@ -76,3 +75,11 @@
 This software may include modified and unmodified portions of:<% framework.meta.credits.forEach(function (credit) { %>
 - <%= credit %><% }) %>
 <% } %>
+
+
+<% if (framework.meta.sponsors) { %>
+<%= indent %>## Sponsors
+<% framework.meta.sponsors.forEach(function (sponsor) { %>
+- <%= sponsor %><% }) %>
+<% } %>
+
