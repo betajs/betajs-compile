@@ -1,4 +1,4 @@
-# betajs-compile 0.0.23
+# betajs-compile 0.0.25
 [![Code Climate](https://codeclimate.com/github/betajs/betajs-compile/badges/gpa.svg)](https://codeclimate.com/github/betajs/betajs-compile)
 
 
@@ -48,5 +48,9 @@ Apache-2.0
 
 
 
+
+## Sponsors
+
+- Ziggeo
 
 

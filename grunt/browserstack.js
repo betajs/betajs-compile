@@ -1,3 +1,5 @@
+// curl -u "$BROWSERSTACK_USERNAME:$BROWSERSTACK_KEY" https://api.browserstack.com/4/browsers?flat=true
+
 var compatabilityMap = {
 	"internet explorer": {
 		browserstack_name: "ie",
@@ -16,16 +18,30 @@ var compatabilityMap = {
 			"12": "12_15"
 		}
 	},
+	"firefox": {
+		browserstack_versions: {
+			"3": "3_6"
+		}
+	},
 	"ios": {
 		mobile: true,
 		browserstack_versions: {
-			"latest": "9.3"
+			"latest": "10.0"
 		}
 	},
 	"android": {
 		mobile: true,
 		browserstack_versions: {
-			"latest": "4.2"
+			"latest": "4.4"
+		},
+		device_map: {
+			"2.2": "Samsung Galaxy S",
+			"2.3": "Samsung Galaxy Note",
+			"4.0": "Samsung Galaxy Note 10.1",
+			"4.1": "Samsung Galaxy S3",
+			"4.2": "Google Nexus 4",
+			"4.3": "Samsung Galaxy S4",
+			"4.4": "Samsung Galaxy S5"
 		}
 	},
 	"nodejs": {
@@ -65,7 +81,16 @@ var browserstack = function (compatability, desktop, mobile) {
 			}
 			while (expand.length > 0) {
 				var current = expand.shift();
-				result.push(is_mobile ? {"os": name, "os_version": current} : (name + "_" + current));
+				if (is_mobile) {
+					var mob = {
+						"os": name,
+						"os_version": current
+					};
+					if (mapped.device_map && mapped.device_map[current])
+						mob.device = mapped.device_map[current];
+					result.push(mob);
+				} else
+					result.push(name + "_" + current);
 				if (current === maxver)
 					break;
 			}
