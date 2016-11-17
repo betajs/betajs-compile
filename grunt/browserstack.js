@@ -13,11 +13,6 @@ var compatabilityMap = {
 			"12": "13"
 		}
 	},
-	"opera": {
-		browserstack_versions: {
-			"12": "12_15"
-		}
-	},
 	"firefox": {
 		browserstack_versions: {
 			"3": "3_6"
@@ -27,6 +22,27 @@ var compatabilityMap = {
 		mobile: true,
 		browserstack_versions: {
 			"latest": "10.0"
+		}
+	},
+	"safari": {
+		flash_versions: {
+			"latest": "8"
+		}
+	},
+	"opera": {
+		browserstack_versions: {
+			"12": "12_15"
+		},
+		flash_versions: {
+			"latest": "30"
+		},
+		extend_map: {
+			"16": {
+				"os": "Windows",
+				"os_version": "XP",
+				"browser": "opera",
+				"browser_version": "16"
+			}
 		}
 	},
 	"android": {
@@ -49,7 +65,7 @@ var compatabilityMap = {
 	}	
 };
 
-var browserstack = function (compatability, desktop, mobile) {
+var browserstack = function (compatability, desktop, mobile, flash) {
 	var result = [];
 	for (var key in compatability) {
 		var value = compatability[key].toLowerCase();
@@ -72,6 +88,10 @@ var browserstack = function (compatability, desktop, mobile) {
 			var name = mapped.browserstack_name ? mapped.browserstack_name : key;
 			var minver = mapped.browserstack_versions ? mapped.browserstack_versions[minversion] || minversion : minversion;
 			var maxver = mapped.browserstack_versions ? mapped.browserstack_versions[maxversion] || maxversion : maxversion;
+			if (flash) {
+				minver = mapped.flash_versions ? mapped.flash_versions[minver] || minver : minver;
+				maxver = mapped.flash_versions ? mapped.flash_versions[maxver] || maxver : maxver;
+			}
 			var expand = mapped.browserstack_expand || (minver === maxver ? [minver] : [minver, maxver]);
 			expand = expand.slice();
 			while (expand.length > 0) {
@@ -89,8 +109,12 @@ var browserstack = function (compatability, desktop, mobile) {
 					if (mapped.device_map && mapped.device_map[current])
 						mob.device = mapped.device_map[current];
 					result.push(mob);
-				} else
-					result.push(name + "_" + current);
+				} else {
+					if (mapped.extend_map && mapped.extend_map[current])
+						result.push(mapped.extend_map[current]);
+					else
+						result.push(name + "_" + current);
+				}
 				if (current === maxver)
 					break;
 			}
@@ -119,7 +143,7 @@ module.exports = function (taskname, tests, options) {
     					"test_path" : tests,
     					"test_framework" : "qunit",
     					"timeout": 10 * 60,
-    					"browsers": browserstack(this.pkg.meta.compatability, options.desktop, options.mobile)
+    					"browsers": browserstack(this.pkg.meta.compatability, options.desktop, options.mobile, options.flash)
         			}
         		}
         	},
