@@ -1,5 +1,6 @@
-# betajs-compile 0.0.26
+# betajs-compile 0.0.27
 [![Code Climate](https://codeclimate.com/github/betajs/betajs-compile/badges/gpa.svg)](https://codeclimate.com/github/betajs/betajs-compile)
+[![NPM](https://img.shields.io/npm/v/betajs-compile.svg?style=flat)](https://www.npmjs.com/package/betajs-compile)
 
 
 BetaJS-Compile is a helper repository for building betajs modules.
@@ -20,9 +21,10 @@ BetaJS-Compile is a helper repository for building betajs modules.
 | :--------- | --: |
 | Homepage   | [http://betajs.com](http://betajs.com) |
 | Git        | [git://github.com/betajs/betajs-compile.git](git://github.com/betajs/betajs-compile.git) |
-| Repository | [http://github.com/betajs/betajs-compile](http://github.com/betajs/betajs-compile) |
+| Repository | [https://github.com/betajs/betajs-compile](https://github.com/betajs/betajs-compile) |
 | Blog       | [http://blog.betajs.com](http://blog.betajs.com) | 
 | Twitter    | [http://twitter.com/thebetajs](http://twitter.com/thebetajs) | 
+ 
 
 
 
