@@ -15,7 +15,7 @@
         "url": "https://github.com/betajs/betajs-compile/issues"
     },
     "name": "betajs-compile",
-    "version": "0.0.28",
+    "version": "0.0.29",
     "description": "BetaJS-Compile is a helper repository for building betajs modules.",
     "contributors": [
         "Oliver Friedmann"

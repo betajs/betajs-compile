@@ -1,5 +1,4 @@
 module.exports = function (taskname, source, target, bindings, version_assumptions, exports) {
-	this.grunt.loadNpmTasks('grunt-git-revision-count');
 	this.grunt.loadNpmTasks('grunt-preprocess');
 	this.grunt.loadNpmTasks('betajs-scoped');
 	taskname = taskname || "scopedclosurerevision";
