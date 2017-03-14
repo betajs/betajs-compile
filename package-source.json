@@ -1,6 +1,6 @@
 {
 	"name": "betajs-compile",
-	"version": "0.0.29",
+	"version": "0.0.30",
 	"description": "BetaJS-Compile is a helper repository for building betajs modules.",
 	"contributors": ["Oliver Friedmann"],
 	"devDependencies": {
@@ -24,7 +24,8 @@
 		"badges": {
 			"codeclimate": true,
 			"travis": false,
-			"npm": true
+			"npm": true,
+			"gitter": true
 		},
 		"compatability": {
 			"NodeJS": "0.10 - Latest" 
