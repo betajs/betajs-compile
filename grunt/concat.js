@@ -7,7 +7,8 @@ module.exports = function (taskname, source, target, options) {
 	return this.registerTask(taskname, [
         this.addConfigTask("concat", taskname, {
 			options : {
-				banner : options.banner ? options.banner.call(this) : this.banner
+				banner : options.banner ? options.banner.call(this) : this.banner,
+				process: options.process
 			},
 			files : files
 		})

@@ -8,7 +8,8 @@ module.exports = function (taskname, code) {
 				"box-sizing": false,
 				"bulletproof-font-face": false,
 				"floats": false,
-				"font-sizes": false
+				"font-sizes": false,
+				"universal-selector": false
 			},
 			src: code
 		})

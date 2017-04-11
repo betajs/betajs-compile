@@ -81,7 +81,8 @@ module.exports = {
     "package",
     "benchmark",
 	"githook",
-	"gittag"
+	"gittag",
+	"jsbeautify"
     
 ].forEach(function (task) {
 	module.exports[task + "Task"] = require(__dirname + "/grunt/" + task + ".js");

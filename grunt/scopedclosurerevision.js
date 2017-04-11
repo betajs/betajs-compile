@@ -1,4 +1,4 @@
-module.exports = function (taskname, source, target, bindings, version_assumptions, exports) {
+module.exports = function (taskname, source, target, bindings, version_assumptions, exports, process) {
 	this.grunt.loadNpmTasks('grunt-preprocess');
 	this.grunt.loadNpmTasks('betajs-scoped');
 	taskname = taskname || "scopedclosurerevision";
@@ -15,7 +15,8 @@ module.exports = function (taskname, source, target, bindings, version_assumptio
 			exports: exports ? "module:" : false,
 			src : source,
 			dest : target,
-			banner : this.banner
+			banner : this.banner,
+			process: process
 		})
 	]);
 };
