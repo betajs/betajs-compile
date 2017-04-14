@@ -9,7 +9,9 @@ module.exports = function (taskname, code) {
 				"bulletproof-font-face": false,
 				"floats": false,
 				"font-sizes": false,
-				"universal-selector": false
+				"universal-selector": false,
+        "order-alphabetical": false,
+        "adjoining-classes": false
 			},
 			src: code
 		})
