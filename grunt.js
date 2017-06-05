@@ -41,7 +41,7 @@ module.exports = {
 	},
 	
 	myip: function () {
-		return cmd("ifconfig | grep 'inet '  | grep broadcast | sed 's/.*inet \\(.*\\) netmask.*/\\1/'", "127.0.0.1");
+		return cmd("ifconfig | grep 'inet '  | grep broadcast | sed 's/.*inet \\(.*\\) netmask.*/\\1/'", "127.0.0.1").split("\n")[0];
 	},
 	
 	myhostname: function () {
