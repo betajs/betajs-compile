@@ -10,7 +10,7 @@ var compatabilityMap = {
 	},
 	"edge": {
 		browserstack_versions: {
-			"12": "13"
+			"12": "14"
 		}
 	},
 	"firefox": {
@@ -21,7 +21,7 @@ var compatabilityMap = {
 	"ios": {
 		mobile: true,
 		browserstack_versions: {
-			"latest": "10.0"
+			"latest": "10.3"
 		}
 	},
 	"safari": {
@@ -43,6 +43,11 @@ var compatabilityMap = {
 				"browser": "opera",
 				"browser_version": "16"
 			}
+		}
+	},
+	"yandex": {
+		browserstack_versions: {
+			"latest": "14.12"
 		}
 	},
 	"android": {
@@ -70,6 +75,8 @@ var browserstack = function (compatability, desktop, mobile, flash) {
 	for (var key in compatability) {
 		var value = compatability[key].toLowerCase();
 		var versions = value.replace(/\s/g, '').split("-");
+		if (versions.length === 1)
+			versions.push(versions[0]);
 		if (versions.length !== 2)
 			throw ("Cannot parse version '" + value + "'");
 		var minversion = versions[0];

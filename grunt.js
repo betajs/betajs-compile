@@ -82,6 +82,7 @@ module.exports = {
     "benchmark",
 	"githook",
 	"gittag",
+	"qunitjs",
 	"jsbeautify"
     
 ].forEach(function (task) {
