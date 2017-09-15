@@ -28,7 +28,7 @@
 			"gitter": true
 		},
 		"compatability": {
-			"NodeJS": "0.10 - Latest" 
+			"NodeJS": "4.0 - Latest"
 		}
 	} 
 }
