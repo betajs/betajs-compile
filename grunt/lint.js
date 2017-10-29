@@ -8,7 +8,8 @@ module.exports = function (taskname, code, eslint) {
 			options : {
 				es5 : false,
 				es3 : true,
-				smarttabs: true
+				smarttabs: true,
+				withstmt: true
 			},
 			files: {
 				src: code

@@ -1,4 +1,4 @@
-# betajs-compile 0.0.34
+# betajs-compile 0.0.35
 [![Code Climate](https://codeclimate.com/github/betajs/betajs-compile/badges/gpa.svg)](https://codeclimate.com/github/betajs/betajs-compile)
 [![NPM](https://img.shields.io/npm/v/betajs-compile.svg?style=flat)](https://www.npmjs.com/package/betajs-compile)
 [![Gitter Chat](https://badges.gitter.im/betajs/betajs-compile.svg)](https://gitter.im/betajs/betajs-compile)
@@ -31,7 +31,7 @@ BetaJS-Compile is a helper repository for building betajs modules.
 ## Compatability
 | Target | Versions |
 | :----- | -------: |
-| NodeJS | 0.10 - Latest |
+| NodeJS | 4.0 - Latest |
 
 
 
