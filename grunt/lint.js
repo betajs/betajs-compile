@@ -9,7 +9,8 @@ module.exports = function (taskname, code, eslint) {
 				es5 : false,
 				es3 : true,
 				smarttabs: true,
-				withstmt: true
+				withstmt: true,
+                boss: true
 			},
 			files: {
 				src: code
