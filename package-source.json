@@ -1,34 +1,38 @@
 {
-	"name": "betajs-compile",
-	"version": "0.0.36",
-	"description": "BetaJS-Compile is a helper repository for building betajs modules.",
-	"contributors": ["Oliver Friedmann"],
-	"devDependencies": {
-    	"lodash": "",
-		"grunt": "",
-		"grunt-contrib-jshint": "",
-		"grunt-template": "",
-		"grunt-yaml": "",
-		"js-yaml": ""
-	},
-	"repository": {
-		"type": "git",
-		"url": "git://github.com/betajs/betajs-compile.git"
-	}, 
-	"main": "grunt.js",
-    "engines": {
-    	"node": ""
+    "name": "betajs-compile",
+    "version": "0.0.37",
+    "description": "BetaJS-Compile is a helper repository for building betajs modules.",
+    "contributors": [
+        "Oliver Friedmann"
+    ],
+    "devDependencies": {
+        "lodash": "",
+        "grunt": "",
+        "grunt-contrib-jshint": "",
+        "grunt-template": "",
+        "grunt-yaml": "",
+        "js-yaml": ""
     },
-	"meta": {
-		"sponsors": ["Ziggeo"],
-		"badges": {
-			"codeclimate": true,
-			"travis": false,
-			"npm": true,
-			"gitter": true
-		},
-		"compatability": {
-			"NodeJS": "4.0 - Latest"
-		}
-	} 
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/betajs/betajs-compile.git"
+    },
+    "main": "grunt.js",
+    "engines": {
+        "node": ""
+    },
+    "meta": {
+        "sponsors": [
+            "Ziggeo"
+        ],
+        "badges": {
+            "codeclimate": true,
+            "travis": false,
+            "npm": true,
+            "gitter": true
+        },
+        "compatability": {
+            "NodeJS": "4.0 - Latest"
+        }
+    }
 }

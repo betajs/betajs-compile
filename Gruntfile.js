@@ -14,6 +14,7 @@ module.exports = function(grunt) {
     
     /* Package */
     .packageTask()
+	.autoincreasepackageTask(null, "package-source.json")
     
     /* Markdown Files */
 	.readmeTask()
@@ -21,5 +22,5 @@ module.exports = function(grunt) {
 
 	grunt.initConfig(gruntHelper.config);	
 
-	grunt.registerTask('default', ['package', 'lint', 'readme', 'license', 'codeclimate']);
+	grunt.registerTask('default', ['autoincreasepackage', 'package', 'lint', 'readme', 'license', 'codeclimate']);
 };
