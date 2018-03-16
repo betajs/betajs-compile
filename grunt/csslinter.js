@@ -11,6 +11,7 @@ module.exports = function (taskname, code) {
 				"font-sizes": false,
 				"universal-selector": false,
         "order-alphabetical": false,
+        "outline-none": false,
         "adjoining-classes": false
 			},
 			src: code
