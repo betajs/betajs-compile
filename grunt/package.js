@@ -6,7 +6,7 @@ module.exports = function (taskname, options) {
 		var src = grunt.file.readJSON('package-source.json');
 		var baseUrl = src.repository.url.replace("git://", "https://").replace(".git", "");
 		src = _.extend({
-			"homepage": "http://betajs.com",
+			"homepage": "https://betajs.com",
 			"license": "Apache-2.0",
 			"licenses": [{
 				"type": "Apache-2.0",
@@ -21,8 +21,8 @@ module.exports = function (taskname, options) {
 			}
 		}, src);
 		src.meta = _.extend({
-			"blog": "http://blog.betajs.com",
-			"twitter": "http://twitter.com/thebetajs"
+			"blog": "https://blog.betajs.com",
+			"twitter": "https://twitter.com/thebetajs"
 		}, src.meta);
 		grunt.file.write("package.json", JSON.stringify(src, "", 4));
 	});

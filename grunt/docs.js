@@ -85,7 +85,7 @@ module.exports = function (taskname, options) {
 							},
 							"github": {
 								"title": "GitHub",
-								"url": this.pkg.repository.url.replace("git://", "http://").replace(".git", ""),
+								"url": this.pkg.repository.url.replace("git://", "https://").replace(".git", ""),
 								"navbar": true
 							}
 						}
