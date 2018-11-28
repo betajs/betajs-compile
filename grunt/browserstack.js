@@ -10,7 +10,7 @@ var compatabilityMap = {
 	},
 	"edge": {
 		browserstack_versions: {
-			"12": "14"
+			"12": "15"
 		}
 	},
 	"firefox": {
@@ -21,8 +21,14 @@ var compatabilityMap = {
 	"ios": {
 		mobile: true,
 		browserstack_versions: {
-			"latest": "10.3"
-		}
+			"latest": "12.1"
+		},
+		real_mobile: {
+			"3.0": false
+		},
+        device_map: {
+            "12.1": "iPhone 8"
+        }
 	},
 	"safari": {
 		flash_versions: {
@@ -53,7 +59,7 @@ var compatabilityMap = {
 	"android": {
 		mobile: true,
 		browserstack_versions: {
-			"latest": "4.4"
+			"latest": "8.0"
 		},
 		device_map: {
 			"2.2": "Samsung Galaxy S",
@@ -62,7 +68,8 @@ var compatabilityMap = {
 			"4.1": "Samsung Galaxy S3",
 			"4.2": "Google Nexus 4",
 			"4.3": "Samsung Galaxy S4",
-			"4.4": "Samsung Galaxy S5"
+			"4.4": "Samsung Galaxy Tab 4",
+			"8.0": "Samsung Galaxy S9 Plus"
 		}
 	},
 	"nodejs": {
@@ -111,8 +118,11 @@ var browserstack = function (compatability, desktop, mobile, flash) {
 				if (is_mobile) {
 					var mob = {
 						"os": name,
-						"os_version": current
+						"os_version": current,
+						"real_mobile": true
 					};
+					if (mapped.real_mobile && current in mapped.real_mobile)
+						mob.real_mobile = mapped.real_mobile[current];
 					if (mapped.device_map && mapped.device_map[current])
 						mob.device = mapped.device_map[current];
 					result.push(mob);
