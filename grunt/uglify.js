@@ -7,17 +7,22 @@ module.exports = function (taskname, source, target, reserved) {
         this.addConfigTask("uglify", taskname, {
 			options : {
 				banner : this.banner,
-				mangle: {
-					screwIE8: false,
-					supportIE8: true,
-					except: reserved || []
+				output: {
+					ascii_only: true
 				},
-				ASCIIOnly: true,
-				screwIE8: false,
-				supportIE8: true
+				ie8: true,
+				mangle: {
+					//screwIE8: false,
+					//supportIE8: true,
+					//except: reserved || []
+				}//,
+				//ASCIIOnly: true,
+				//screwIE8: false,
+				//supportIE8: true
 			},
 			dest: target,
 			src: source			
 		})
 	]);
 };
+
