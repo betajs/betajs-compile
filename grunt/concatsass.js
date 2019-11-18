@@ -1,6 +1,6 @@
 module.exports = function (taskname, source, target, options) {
 	this.grunt.loadNpmTasks('grunt-contrib-concat');
-	this.grunt.loadNpmTasks('grunt-contrib-sass');
+	this.grunt.loadNpmTasks('grunt-dart-sass');
 	this.grunt.loadNpmTasks('grunt-contrib-clean');
 	taskname = taskname || "concatsass";
 	options = options || {};
@@ -13,9 +13,9 @@ module.exports = function (taskname, source, target, options) {
 			},
 			files : files
 		}),
-        this.addConfigTask("sass", taskname, {
+        this.addConfigTask("dart-sass", taskname, {
         	options: {
-				sourcemap: 'none'
+				sourceMap: false
 			},
 			src: target + ".scss",
 			dest: target
