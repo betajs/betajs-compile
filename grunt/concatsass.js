@@ -6,6 +6,12 @@ module.exports = function (taskname, source, target, options) {
 	options = options || {};
 	var files = {};
 	files[target + ".scss"] = [source];
+	var self = this;
+	this.registerTask(taskname + "-remove-charset", function () {
+		self.grunt.file.write(target, self.grunt.file.read(target).split("\n").filter(function (s) {
+			return s.indexOf("@charset") !== 0;
+		}).join("\n"));
+	});
 	return this.registerTask(taskname, [
         this.addConfigTask("concat", taskname, {
 			options : {
@@ -20,6 +26,7 @@ module.exports = function (taskname, source, target, options) {
 			src: target + ".scss",
 			dest: target
 		}),
+		taskname + "-remove-charset",
 		this.addConfigTask("clean", taskname, target + ".scss")
 	]);
 };
