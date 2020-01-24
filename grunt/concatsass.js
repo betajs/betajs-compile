@@ -8,9 +8,21 @@ module.exports = function (taskname, source, target, options) {
 	files[target + ".scss"] = [source];
 	var self = this;
 	this.registerTask(taskname + "-remove-charset", function () {
-		self.grunt.file.write(target, self.grunt.file.read(target).split("\n").filter(function (s) {
+		var lines = self.grunt.file.read(target).split("\n");
+		lines = lines.filter(function (s) {
 			return s.indexOf("@charset") !== 0;
-		}).join("\n"));
+		}).map(function (l) {
+			var r = "";
+			l.split("").forEach(function (c) {
+				var code = c.charCodeAt(0);
+				if (code > 255)
+					r += "\\" + code.toString(16);
+				else
+					r += c;
+			});
+			return r;
+		});
+		self.grunt.file.write(target, lines.join("\n"));
 	});
 	return this.registerTask(taskname, [
         this.addConfigTask("concat", taskname, {
