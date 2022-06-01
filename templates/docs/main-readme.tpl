@@ -33,7 +33,7 @@
 
 
 <% if (framework.meta.compatability) { %>
-<%= indent %>## Compatability
+<%= indent %>## Compatibility
 | Target | Versions |
 | :----- | -------: |
 <% for (var key in framework.meta.compatability) { %>| <%= key %> | <%= framework.meta.compatability[key] %> |
