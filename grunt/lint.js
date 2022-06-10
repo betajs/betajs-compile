@@ -6,8 +6,7 @@ module.exports = function (taskname, code, eslint) {
 	return this.registerTask(taskname, [
 		this.addConfigTask("jshint", taskname, {
 			options : {
-				es5 : false,
-				es3 : true,
+				esversion: 3,
 				smarttabs: true,
 				withstmt: true,
                 boss: true
