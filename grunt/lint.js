@@ -1,13 +1,13 @@
-module.exports = function (taskname, code, eslint) {
+module.exports = function (taskname, code, eslint, options) {
 	this.grunt.loadNpmTasks('grunt-contrib-jshint');
 	if (eslint)
 		this.grunt.loadNpmTasks('grunt-eslint');
 	taskname = taskname || "lint";
+	esversion = options.esversion || 3;
 	return this.registerTask(taskname, [
 		this.addConfigTask("jshint", taskname, {
 			options : {
-				es5 : false,
-				es3 : true,
+				esversion: esversion,
 				smarttabs: true,
 				withstmt: true,
                 boss: true
